@@ -7,3 +7,30 @@
 
   border: 1px solid red;
 }
+
+:root {
+  --green: darkslategray;
+  --white: whitesmoke;
+}
+
+/* nav */
+nav {
+  background-color: var(--green);
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
