@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { GlobalProvider } from "./contexts/GlobalContext"
 
 // layouts
 import DefaultLayout from "./layouts/DefaultLayout"
@@ -11,12 +12,14 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route Component={DefaultLayout}>
-            <Route path="/" Component={TaskList} />
-            <Route path="/addtask" Component={AddTask} />
-          </Route>
-        </Routes>
+        <GlobalProvider>
+          <Routes>
+            <Route Component={DefaultLayout}>
+              <Route path="/" Component={TaskList} />
+              <Route path="/addtask" Component={AddTask} />
+            </Route>
+          </Routes>
+        </GlobalProvider>
       </BrowserRouter>
     </>
   )
