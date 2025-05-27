@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react"
+import { createContext, useState, useEffect, useContext } from "react"
 import axios from "axios"
 
 const GlobalContext = createContext();
@@ -6,7 +6,7 @@ const GlobalContext = createContext();
 const url = import.meta.env.VITE_API_URL;
 
 const GlobalProvider = ({ children }) => {
-    const [tasks, setTasks] = useState({});
+    const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
         axios.get(`${url}/tasks`)

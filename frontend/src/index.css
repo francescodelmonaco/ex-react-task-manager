@@ -5,32 +5,121 @@
   padding: 0;
   box-sizing: border-box;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 :root {
   --green: darkslategray;
   --white: whitesmoke;
+  --red: #FF8585;
+  --yellow: #FFDC85;
+  --lightgreen: #B2E59F;
+  --table-bg: #f6f5f1;
+}
+
+h1 {
+  text-align: center;
+  padding: 1rem;
 }
 
 /* nav */
 nav {
   background-color: var(--green);
-}
 
-ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 1rem 0;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: var(--white);
+      }
+    }
+  }
 }
 
 li {
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-  color: var(--white);
+main {
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* table */
+.table {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem;
+
+  background-color: var(--table-bg);
+  border: 1px solid var(--table-bg);
+  border-radius: 10px;
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  .table-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    li {
+      flex-basis: calc(100% / 3);
+
+      h3 {
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  .tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .task-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+
+      span {
+        flex-basis: calc(100% / 3);
+        padding: 0.5rem;
+      }
+    }
+  }
+
+}
+
+/* status pills */
+.red-pill {
+  background-color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.yellow-pill {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.green-pill {
+  background-color: var(--lightgreen);
+  border: 1px solid var(--lightgreen);
+  border-radius: 10px;
+  text-align: center;
 }
