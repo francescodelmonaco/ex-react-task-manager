@@ -1,5 +1,5 @@
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   margin: 0;
   padding: 0;
@@ -9,12 +9,18 @@
 }
 
 :root {
-  --green: darkslategray;
+  --blue: #050647;
   --white: whitesmoke;
-  --red: #FF8585;
-  --yellow: #FFDC85;
-  --lightgreen: #B2E59F;
-  --table-bg: #f6f5f1;
+  --red: #e9acac;
+  --yellow: #f7dd99;
+  --green: #bae2ac;
+  --bg: #fafafa;
+  --lightblue: #627faf8d;
+  --lightgray: lightgray;
+}
+
+html {
+  background-color: var(--bg);
 }
 
 h1 {
@@ -22,9 +28,13 @@ h1 {
   padding: 1rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* nav */
 nav {
-  background-color: var(--green);
+  background-color: var(--blue);
 
   ul {
     display: flex;
@@ -39,6 +49,14 @@ nav {
       a {
         text-decoration: none;
         color: var(--white);
+        padding: 0.5rem 1rem;
+      }
+
+      a:hover {
+        background-color: var(--lightblue);
+        padding: 0.5rem 1rem;
+        border: 1px soldi var(--lightblue);
+        border-radius: 10px;
       }
     }
   }
@@ -54,52 +72,20 @@ main {
 }
 
 /* table */
-.table {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding: 0.5rem;
-
-  background-color: var(--table-bg);
-  border: 1px solid var(--table-bg);
+table {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background-color: var(--white);
   border-radius: 10px;
+}
 
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+th,
+td {
+  padding: 0.7rem 1rem;
+}
 
-  .table-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-
-    li {
-      flex-basis: calc(100% / 3);
-
-      h3 {
-        padding: 0.5rem;
-      }
-    }
-  }
-
-  .tasks-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    .task-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-
-      span {
-        flex-basis: calc(100% / 3);
-        padding: 0.5rem;
-      }
-    }
-  }
-
+.border-r {
+  border-right: 1px dashed var(--lightgray);
 }
 
 /* status pills */
@@ -108,6 +94,7 @@ main {
   border: 1px solid var(--red);
   border-radius: 10px;
   text-align: center;
+  padding: 0.2rem 0.4rem;
 }
 
 .yellow-pill {
@@ -115,11 +102,13 @@ main {
   border: 1px solid var(--yellow);
   border-radius: 10px;
   text-align: center;
+  padding: 0.2rem 0.4rem;
 }
 
 .green-pill {
-  background-color: var(--lightgreen);
-  border: 1px solid var(--lightgreen);
+  background-color: var(--green);
+  border: 1px solid var(--green);
   border-radius: 10px;
   text-align: center;
+  padding: 0.2rem 0.4rem;
 }

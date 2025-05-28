@@ -1,8 +1,6 @@
-import { useGlobalContext } from "../contexts/GlobalContext"
 import { memo } from "react"
 
-function TaskRow() {
-    const { tasks } = useGlobalContext();
+function TaskRow({ task }) {
 
     const statusStyle = (status) => {
         if (status === "To do") {
@@ -15,21 +13,15 @@ function TaskRow() {
     }
 
     return (
-        <>
-            {
-                tasks.map(t => {
-                    return (
-                        <li key={t.id} className="task-row">
-                            <span>{t.title}</span>
-                            <span
-                                className={statusStyle(t.status)}
-                            >{t.status}</span>
-                            <span>{t.createdAt}</span>
-                        </li >
-                    )
-                })
-            }
-        </>
+        <tr>
+            <td className="border-r">{task.title}</td>
+
+            <td className="text-center border-r">
+                <span className={statusStyle(task.status)}>{task.status}</span>
+            </td>
+
+            <td className="text-center">{new Date(task.createdAt).toLocaleDateString()}</td>
+        </tr>
     )
 };
 

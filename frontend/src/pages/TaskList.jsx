@@ -1,24 +1,34 @@
-import TaskRow from "../components/TaskRow";
+import { useGlobalContext } from "../contexts/GlobalContext"
+
+// components
+import TaskRow from "../components/TaskRow"
 
 export default function TaskList() {
+
+    const { tasks } = useGlobalContext();
+
     return (
         <>
             <h1>Lista dei Task</h1>
 
-            <div className="table">
-                <ul className="table-head">
-                    <li><h3>Nome</h3></li>
-                    <li><h3>Stato</h3></li>
-                    <li><h3>Data di Creazione</h3></li>
-                </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th className="border-r">Nome</th>
+                        <th className="border-r">Stato</th>
+                        <th>Data di creazione</th>
+                    </tr>
+                </thead>
 
                 {/* elenco task */}
-                <div>
-                    <ul className="tasks-list">
-                        <TaskRow />
-                    </ul>
-                </div>
-            </div>
+                <tbody>
+                    {
+                        tasks.map(t => (
+                            <TaskRow key={t.id} task={t} />
+                        ))
+                    }
+                </tbody>
+            </table>
         </>
     )
 }

@@ -14,6 +14,8 @@ const GlobalProvider = ({ children }) => {
             .catch(err => console.error(err))
     }, []);
 
+    console.log(tasks);
+
     const value = {
         tasks
     };
