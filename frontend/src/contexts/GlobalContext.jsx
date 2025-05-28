@@ -1,29 +1,16 @@
-import { createContext, useState, useEffect, useContext } from "react"
-import axios from "axios"
+import { createContext, useContext } from "react"
+import useTasks from "../../hooks/useTasks"
 
 const GlobalContext = createContext();
 
-const url = import.meta.env.VITE_API_URL;
-
 const GlobalProvider = ({ children }) => {
-    const [tasks, setTasks] = useState([]);
 
-    useEffect(() => {
-        axios.get(`${url}/tasks`)
-            .then(res => setTasks(res.data))
-            .catch(err => console.error(err))
-    }, []);
-
-    console.log(tasks);
-
-    const value = {
-        tasks
-    };
+    const value = useTasks();
 
     return (
-        <GlobalContext.Provider value={value}>
+        <GlobalContext.Provider value={{ ...value }}>
             {children}
-        </GlobalContext.Provider>
+        </GlobalContext.Provider >
     )
 };
 
