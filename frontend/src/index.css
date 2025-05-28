@@ -112,3 +112,46 @@ td {
   text-align: center;
   padding: 0.2rem 0.4rem;
 }
+
+/* form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    width: 50%;
+  }
+}
+
+input,
+textarea,
+select {
+  padding: 0.5rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 10px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--lightblue);
+  border: 1px solid var(--lightblue);
+  border-radius: 10px;
+  width: 50%;
+}
+
+.error {
+  color: red;
+  font-size: small;
+  text-align: start;
+}
