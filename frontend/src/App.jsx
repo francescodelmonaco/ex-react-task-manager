@@ -7,6 +7,7 @@ import DefaultLayout from "./layouts/DefaultLayout"
 // components
 import TaskList from "./pages/TaskList"
 import AddTask from "./pages/AddTask"
+import TaskDetail from "./pages/TaskDetail"
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
             <Route Component={DefaultLayout}>
               <Route path="/" Component={TaskList} />
               <Route path="/addtask" Component={AddTask} />
+              <Route path="/task/:id" Component={TaskDetail} />
             </Route>
           </Routes>
         </GlobalProvider>

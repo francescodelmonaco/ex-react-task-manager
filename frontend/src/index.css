@@ -23,13 +23,19 @@ html {
   background-color: var(--bg);
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
   padding: 1rem;
 }
 
 .text-center {
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 /* nav */
@@ -148,10 +154,25 @@ button {
   border: 1px solid var(--lightblue);
   border-radius: 10px;
   width: 50%;
+  cursor: pointer;
 }
 
 .error {
   color: red;
   font-size: small;
   text-align: start;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.delete-btn {
+  background-color: var(--red);
+  border: 1px solid var(--red);
+  margin: 1rem auto;
 }

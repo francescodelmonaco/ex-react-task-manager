@@ -1,4 +1,5 @@
 import { memo } from "react"
+import { Link } from "react-router-dom"
 
 function TaskRow({ task }) {
 
@@ -14,7 +15,11 @@ function TaskRow({ task }) {
 
     return (
         <tr>
-            <td className="border-r">{task.title}</td>
+            <td className="border-r">
+                <Link to={`/task/${task.id}`}>
+                    {task.title}
+                </Link>
+            </td>
 
             <td className="text-center border-r">
                 <span className={statusStyle(task.status)}>{task.status}</span>
