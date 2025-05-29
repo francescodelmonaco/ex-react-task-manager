@@ -177,6 +177,13 @@ button {
   margin: 1rem auto;
 }
 
+.task-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* modal */
 .modal-overlay {
   position: fixed;
@@ -192,6 +199,7 @@ button {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 40%;
 
   display: flex;
   flex-direction: column;
@@ -209,13 +217,5 @@ button {
     gap: 1rem;
     width: 100%;
     padding-top: 1rem;
-
-    .discard:hover {
-      background-color: var(--green);
-    }
-
-    .confirm:hover {
-      background-color: var(--red);
-    }
   }
 }

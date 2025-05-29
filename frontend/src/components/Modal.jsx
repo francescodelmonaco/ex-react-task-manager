@@ -8,7 +8,7 @@ export default function Modal({ title, content, show, onClose, onConfirm, confir
         <div className="modal-overlay">
             <div className="modal">
                 <h2>{title}</h2>
-                <p>{content}</p>
+                {content}
 
                 <div>
                     <button className="discard" onClick={onClose}>Annulla</button>
