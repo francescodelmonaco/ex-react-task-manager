@@ -88,6 +88,22 @@ table {
 th,
 td {
   padding: 0.7rem 1rem;
+
+  div {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+th {
+  border-bottom: 1px dashed var(--lightgray);
+}
+
+th:hover {
+  background-color: var(--lightgray);
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .border-r {
