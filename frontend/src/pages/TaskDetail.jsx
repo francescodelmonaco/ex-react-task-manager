@@ -1,19 +1,35 @@
-import { useParams } from "react-router-dom"
-import { useContext } from "react"
+import { useNavigate, useParams } from "react-router-dom"
+import { useContext, useState } from "react"
 import { GlobalContext } from "../contexts/GlobalContext"
+import Modal from "../components/Modal"
 
 export default function TaskDetail() {
 
     const { id } = useParams();
 
-    const { tasks } = useContext(GlobalContext);
+    const navigate = useNavigate();
+
+    const { tasks, removeTask } = useContext(GlobalContext);
 
     const task = tasks.find(t => t.id === parseInt(id));
+
+    const [modal, setModal] = useState(false);
 
     if (!task) {
         return (
             <h2>Task non trovata ❌</h2>
         )
+    };
+
+    const handleDelete = async () => {
+        try {
+            await removeTask(task.id);
+            alert("Task elimininata correttamente!");
+            navigate("/");
+        } catch (error) {
+            console.error(error);
+            alert(error.message);
+        }
     };
 
     return (
@@ -27,8 +43,19 @@ export default function TaskDetail() {
                     <p><strong>Stato:</strong> {task.status}</p>
                     <p><strong>Data di creazione:</strong> {new Date(task.createdAt).toLocaleDateString()}</p>
 
-                    <button className="delete-btn">Elimina Task</button>
+                    <button
+                        className="delete-btn"
+                        onClick={() => setModal(true)}
+                    >Elimina Task</button>
                 </div>
+
+                <Modal
+                    title={"Conferma di eliminazione"}
+                    content={"Confermi di voler cancellare la task?"}
+                    show={modal}
+                    onClose={() => setModal(false)}
+                    onConfirm={handleDelete}
+                />
             </div>
         </>
     )
