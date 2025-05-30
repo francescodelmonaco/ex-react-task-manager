@@ -77,6 +77,13 @@ main {
   width: 80%;
 }
 
+/* search bar */
+.search-bar {
+  width: 100%;
+  margin-bottom: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
 /* table */
 table {
   width: 100%;
