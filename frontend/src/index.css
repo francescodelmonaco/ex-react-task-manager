@@ -159,7 +159,7 @@ form {
     justify-content: center;
     text-align: center;
     gap: 0.5rem;
-    width: 50%;
+    width: 70%;
   }
 }
 
@@ -222,7 +222,7 @@ button {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
+  width: 70%;
 
   display: flex;
   flex-direction: column;
